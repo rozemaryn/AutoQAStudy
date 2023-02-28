@@ -4,7 +4,7 @@
 //import org.testng.Assert;
 //import org.testng.annotations.Test;
 //
-//public class GroupTest extends BaseTest {
+//public class GroupTest extends core.BaseTest {
 //
 //    private Calculator calculator = new Calculator();
 //    private final double FIRST_NUM = 10;

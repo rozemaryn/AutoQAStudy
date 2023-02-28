@@ -1,4 +1,4 @@
-/*
+package appleinsider;/*
 Главная страница сайта appleinsider.ru
  */
 
@@ -7,7 +7,6 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$x;
-import static java.awt.SystemColor.text;
 
 public class MainPage {
     private final SelenideElement textBoxInput = $x("//input[@type=\"text\"]");
