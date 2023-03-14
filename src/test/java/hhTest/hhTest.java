@@ -1,6 +1,7 @@
 package hhTest;
-import com.codeborne.selenide.Selenide;
 import core.BaseTest;
+import hh.Resume;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,5 +27,19 @@ public class hhTest extends BaseTest {
         Map <String, Object> actualAttributes = hhResumePage.getAttributes();
 
         Assert.assertEquals(expectedAttributes, actualAttributes);
+    }
+
+    @Test
+    public void checkAttributesClass () {
+
+        HHResumePage hhResumePage = new HHResumePage(Resume_URL);
+        Resume expectedAttributes = new Resume("Ж", 31, "Москва", true, true);
+        Resume actualAttributes = new Resume(hhResumePage.getFirstLetterOfSex(), hhResumePage.getAge(),
+                hhResumePage.getCity(), hhResumePage.phoneConfirmed(), hhResumePage.isReadyToRelocate());
+
+        Assert.assertEquals(expectedAttributes, actualAttributes);
+
+         // другой способ сравнения, без перезаписи equals
+        //Assert.assertTrue(EqualsBuilder.reflectionEquals(expectedAttributes, actualAttributes));
     }
 }

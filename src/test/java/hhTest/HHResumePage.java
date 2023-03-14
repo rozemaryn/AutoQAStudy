@@ -2,7 +2,6 @@ package hhTest;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +28,7 @@ public class HHResumePage {
                 put(AGE, getAge());
                 put(CITY, getCity());
                 put(CONFIRMED_PHONE, phoneConfirmed());
-                put(READY_TO_RELOCATE, isReadytoRelocate());
+                put(READY_TO_RELOCATE, isReadyToRelocate());
             }};
     }
     public HHResumePage(String url) {
@@ -54,7 +53,7 @@ public class HHResumePage {
         return city.getText();
     }
 
-    public boolean isReadytoRelocate() {
+    public boolean isReadyToRelocate() {
         String [] array = locationData.getText().split(", ");
         String relocate = array[2];
         return relocate.equals("готова к переезду");
