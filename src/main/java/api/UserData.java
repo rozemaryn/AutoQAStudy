@@ -18,7 +18,6 @@ public class UserData {
     public UserData () {
 
     }
-
     public Integer getId() {
         return id;
     }
