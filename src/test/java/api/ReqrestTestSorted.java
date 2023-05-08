@@ -13,7 +13,7 @@ public class ReqrestTestSorted {
     private static final String URL = "https://reqres.in/";
 
     @Test
-    public void isYearsSorted () {
+    public void areYearsSorted () {
         Specifications.installSpecs(Specifications.requestSpec(URL), Specifications.respSpec200());
         List<ColoursData> colours = given()
                 .when()

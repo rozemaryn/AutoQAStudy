@@ -1,0 +1,38 @@
+package api;
+
+public class UserTime {
+    private String name;
+    private String job;
+
+    public UserTime(String name, String job) {
+        this.name = name;
+        this.job = job;
+    }
+
+    public UserTime() {};
+
+    public String getName() {
+        return name;
+    }
+
+    public String getJob() {
+        return job;
+    }
+}
+
+class UserTimeResponse extends UserTime {
+    private String updatedAt;
+
+    public UserTimeResponse(String name, String job, String updatedAt) {
+        super(name, job);
+        this.updatedAt = updatedAt;
+
+    }
+
+    public UserTimeResponse() {
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+}
