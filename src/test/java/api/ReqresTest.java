@@ -19,7 +19,7 @@ public class ReqresTest {
 
         List<UserData> users = given()
                 .when()
-                //.contentType(ContentType.JSON) // указываем тип данных, который получаем
+                .contentType(ContentType.JSON) // указываем тип данных, который получаем
                 .get("api/users?page=2") //указываем запрос и куда он обращается
                 .then().log().all() // выводим данные
                 .extract().body().jsonPath().getList("data", UserData.class);
