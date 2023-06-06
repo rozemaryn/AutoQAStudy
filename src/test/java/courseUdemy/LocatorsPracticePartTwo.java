@@ -25,7 +25,7 @@ public class LocatorsPracticePartTwo {
 
         driver.findElement(By.linkText("Forgot your password?")).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("reset-pwd-btn")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("reset-pwd-btn")));
 
         driver.findElement(By.cssSelector("input[type='text']:nth-child(2)")).sendKeys("John");
         driver.findElement(By.xpath("//input[@placeholder = 'Name']")).clear();
@@ -38,8 +38,7 @@ public class LocatorsPracticePartTwo {
         System.out.println(resetPassword);
 
         driver.findElement(By.className("go-to-login-btn")).click();
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(1));
-        WebElement element1 = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("inputUsername")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inputUsername")));
 
         driver.findElement(By.id("inputUsername")).sendKeys("rahul");
         driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
@@ -47,8 +46,8 @@ public class LocatorsPracticePartTwo {
         driver.findElement(By.id("chkboxOne")).click();
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-        String success = driver.findElement(By.xpath("//div/p")).getText();
-        System.out.println(success);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/p")));
+        System.out.println(element.getText());
         // driver.quit();
     }
 }
