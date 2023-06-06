@@ -26,5 +26,12 @@ public class LumosityLoginTest {
                 findElement(By.xpath("//input[@placeholder=\"Email address\"]")).
                 sendKeys("animalitos@yandex");
         driver.findElement(By.className("btn-primary")).click();
+
+        System.out.println(driver.findElement(By.className("alert-success")).getText());
+
+
+
+
+
     }
 }
