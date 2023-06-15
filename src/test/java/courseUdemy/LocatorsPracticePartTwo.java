@@ -50,6 +50,6 @@ public class LocatorsPracticePartTwo {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/p")));
 
         Assert.assertEquals(element.getText(), "You are successfully logged in.");
-        // driver.quit();
+        driver.quit();
     }
 }
