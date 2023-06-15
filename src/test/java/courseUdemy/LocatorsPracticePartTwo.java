@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import javax.lang.model.element.Element;
 import java.time.Duration;
@@ -47,7 +48,8 @@ public class LocatorsPracticePartTwo {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div/p")));
-        System.out.println(element.getText());
+
+        Assert.assertEquals(element.getText(), "You are successfully logged in.");
         // driver.quit();
     }
 }
